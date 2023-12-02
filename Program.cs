@@ -1,8 +1,8 @@
 ﻿
 
-IDay day = new Day1(); 
+IDay day = new Day2(); 
 
-day.SolvePart1();
+//day.SolvePart1();
 
 day.SolvePart2();
 
