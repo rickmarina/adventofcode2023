@@ -2,6 +2,7 @@
 
 using System.Text.RegularExpressions;
 
+//--- Day 2: Cube Conundrum ---
 public class Day2 : IDay
 {
 

@@ -20,12 +20,12 @@ public class Day3 : IDay
 
     class Symbol { 
         public char caracter;
-        public Location pos;
+        public required Location pos;
 
     }
     class Number { 
         public int num;
-        public Location pos;
+        public required Location pos;
         public bool include; 
 
         public void SetInclude(bool i) {
