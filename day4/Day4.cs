@@ -34,7 +34,7 @@ public class Day4 : IDay
 
         int[] total = Enumerable.Range(0,data.Length).Select(x=> 1).ToArray(); 
 
-        _ = data.Select((card, idx) => { 
+        var ans = data.Select((card, idx) => { 
             var parts = card.Split("|");
             string p0 = parts[0].Trim();
             string p1 = parts[1].Trim();
@@ -47,9 +47,9 @@ public class Day4 : IDay
             for (int i=idx+1;i<=idx+result; i++) {
                 total[i]+=total[idx];
             }
-            return 1;
+            return total[idx];
         }).Sum(); 
 
-        System.Console.WriteLine(total.Sum());
+        System.Console.WriteLine(ans);
     }
 }
