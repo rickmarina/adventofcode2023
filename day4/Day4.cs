@@ -1,8 +1,6 @@
 
 //--- Day 4: Scratchcards ---
 
-using System.Text.RegularExpressions;
-
 public class Day4 : IDay
 {
 
