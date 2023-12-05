@@ -16,6 +16,10 @@ public class Day5 : IDay
             this.length = length;
         }
 
+        public override string ToString()
+        {
+            return $"{destination_range} {source_range} {length}";
+        }
         public decimal CalcDestination(decimal source)
         {
             if (source >= source_range && source < source_range + length)
@@ -122,6 +126,8 @@ public class Day5 : IDay
         foreach (var block in maps) { 
 
             Stack<(decimal, decimal)> newSeeds = new(); 
+            System.Console.WriteLine($"paso seeds por los mapeos de {block.Key}");
+            //Console.ReadKey();
             while (seeds.Count > 0) { 
                 (decimal s, decimal e) = seeds.Pop();
 
@@ -136,6 +142,7 @@ public class Day5 : IDay
                             seeds.Push((s, os));
                         if (e > oe)
                             seeds.Push((oe, e));
+
                         break;
                     }
                 }
