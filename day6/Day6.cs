@@ -1,5 +1,5 @@
-using System.Text.RegularExpressions;
 
+//--- Day 6: Wait For It ---
 public class Day6 : IDay
 {
     public void SolvePart1()
