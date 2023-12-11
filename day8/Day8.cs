@@ -1,6 +1,6 @@
 // --- Day 8: Haunted Wasteland ---
 
-public class Day8 : IDay
+public class Day8 : BaseDay, IDay
 {
     struct Node
     {
@@ -107,15 +107,5 @@ public class Day8 : IDay
     }
 
 
-    static decimal GCD(decimal a, decimal b)
-    {
-        if (a == 0)
-            return b;
-        return GCD(b % a, a);
-    }
-
-    static decimal LCM(decimal a, decimal b)
-    {
-        return (a / GCD(a, b)) * b;
-    }
+    
 }
