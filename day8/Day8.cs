@@ -1,8 +1,5 @@
 // --- Day 8: Haunted Wasteland ---
 
-using System.Data.SqlTypes;
-using System.Text.RegularExpressions;
-
 public class Day8 : IDay
 {
     struct Node
@@ -86,7 +83,7 @@ public class Day8 : IDay
                     starts[m] = map[starts[m]].left;
                 else
                     starts[m] = map[starts[m]].right;
-                    
+
                 pos++;
                 if (pos == instructions.Length)
                     pos = 0;
