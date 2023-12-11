@@ -1,6 +1,6 @@
 ﻿
 
-IDay day = new Day7(); 
+IDay day = new Day8(); 
 
 //day.SolvePart1();
 
