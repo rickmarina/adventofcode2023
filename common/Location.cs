@@ -1,9 +1,9 @@
-public class Location {
+public class Location<T> {
 
-    public int x { get; set; }
-    public int y { get; set; }
+    public T x { get; set; }
+    public T y { get; set; }
 
-    public Location(int x, int y)
+    public Location(T x, T y)
     {
         this.x = x; 
         this.y = y;

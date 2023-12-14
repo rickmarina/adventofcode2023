@@ -15,18 +15,18 @@ using System.Reflection.Metadata;
 public class Day10 : BaseDay, IDay
 {
 
-    public static Dictionary<char, List<Location>> directions = new() {
-            {'-', new() { new Location(-1,0), new Location(1,0) } },
-            {'|', new() { new Location(0,-1), new Location(0,1) } },
-            {'L', new() { new Location(1,0), new Location(0,-1) } },
-            {'F', new() { new Location(1,0),  new Location(0,1) } },
-            {'J', new() { new Location(-1,0), new Location(0,-1) } },
-            {'7', new() { new Location(-1,0), new Location(0,1) } }
+    public static Dictionary<char, List<Location<int>>> directions = new() {
+            {'-', new() { new Location<int>(-1,0), new Location<int>(1,0) } },
+            {'|', new() { new Location<int>(0,-1), new Location<int>(0,1) } },
+            {'L', new() { new Location<int>(1,0), new Location<int>(0,-1) } },
+            {'F', new() { new Location<int>(1,0),  new Location<int>(0,1) } },
+            {'J', new() { new Location<int>(-1,0), new Location<int>(0,-1) } },
+            {'7', new() { new Location<int>(-1,0), new Location<int>(0,1) } }
             //{'S', new() { new Location(-1,0),  new Location(1,0),  new Location(0,-1),  new Location(0,1) } }
         };
     public void SolvePart1()
     {
-        Location start = new(0, 0);
+        Location<int> start = new(0, 0);
 
         var map = File.ReadAllLines("./day10/input1.txt").Select((x, idx) =>
         {
@@ -58,20 +58,20 @@ public class Day10 : BaseDay, IDay
 
     }
 
-    public HashSet<Location> SolveMap(char[][] map, Location start)
+    public HashSet<Location<int>> SolveMap(char[][] map, Location<int> start)
     {
-        Queue<Location> queue = new Queue<Location>();
+        Queue<Location<int>> queue = new Queue<Location<int>>();
         queue.Enqueue(start);
 
         var track = CopyMatrix(map);
 
-        HashSet<Location> reached = new();
+        HashSet<Location<int>> reached = new();
         reached.Add(start);
 
         int steps = 0;
         while (queue.Count > 0)
         {
-            Location current = queue.Dequeue();
+            Location<int> current = queue.Dequeue();
 
             track[current.y][current.x] = 'O';
             steps++;
@@ -89,13 +89,13 @@ public class Day10 : BaseDay, IDay
         return reached;
     }
 
-    public static IEnumerable<Location> GetNeighbors(char[][] map, Location from)
+    public static IEnumerable<Location<int>> GetNeighbors(char[][] map, Location<int> from)
     {
 
         foreach (var d in directions[map[from.y][from.x]])
         {
             //check if the new position is possible 
-            Location newLoc = new Location(from.x + d.x, from.y + d.y);
+            Location<int> newLoc = new Location<int>(from.x + d.x, from.y + d.y);
 
             if (newLoc.x >= 0 && newLoc.x < map[0].Length && newLoc.y >= 0 && newLoc.y < map.Length && map[newLoc.y][newLoc.x] != '.')
             {
@@ -112,7 +112,7 @@ public class Day10 : BaseDay, IDay
     //Raycasting (vertical or diagonal)
     public void SolvePart2()
     {
-        Location start = new(0, 0);
+        Location<int> start = new(0, 0);
 
         var map = File.ReadAllLines("./day10/input1.txt").Select((x, idx) =>
         {
@@ -143,14 +143,14 @@ public class Day10 : BaseDay, IDay
         //remove pipes not used in path
         for (int i=0; i< map.Length;i++) 
             for (int j=0;j< map[0].Length;j++) 
-                if (!path.Contains(new Location(j,i))) 
+                if (!path.Contains(new Location<int>(j,i))) 
                     map[i][j]='.';
 
         //diagonal raytracing
         int totalInside = 0; 
         for (int i=0; i< map.Length;i++) {
             for (int j=0;j< map[0].Length;j++) { 
-                if (!path.Contains(new Location(j,i))) {
+                if (!path.Contains(new Location<int>(j,i))) {
                     //raytracing this point 
                     int count = 0; 
                     for (int ray=1; (j+ray)< map[0].Length && (i+ray)<map.Length;ray++) { 
