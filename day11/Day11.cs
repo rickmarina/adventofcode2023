@@ -2,7 +2,7 @@
 
 public class Day11 : BaseDay, IDay
 {
-    // Manhattan distance and identify rows and columns what double the space would work
+    // Manhattan distance and identify rows and columns that double the space would work
     public void SolvePart1()
     {
         List<int> rowsDouble = new(); 
