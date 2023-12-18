@@ -184,16 +184,16 @@ public class Day10 : BaseDay, IDay
     }
 
 
-    static void ShowMap(char[][] matrix)
-    {
-        foreach (char[] fila in matrix)
-        {
-            foreach (char c in fila)
-            {
-                Console.Write(c + " ");
-            }
-            Console.WriteLine();
-        }
-    }
+    // static void ShowMap(char[][] matrix)
+    // {
+    //     foreach (char[] fila in matrix)
+    //     {
+    //         foreach (char c in fila)
+    //         {
+    //             Console.Write(c + " ");
+    //         }
+    //         Console.WriteLine();
+    //     }
+    // }
 
 }
