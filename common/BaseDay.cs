@@ -34,4 +34,12 @@ public abstract class BaseDay
         return copia;
     }
 
+    /// <summary>
+    /// Total different chars between two strings
+    /// </summary>
+    /// <returns></returns>
+    public int TotalDiffChars(string a, string b) { 
+       return Enumerable.Range(0,a.Length).Select(i => a[i] ^ b[i]).Count(x=> x>0);
+    }
+
 }

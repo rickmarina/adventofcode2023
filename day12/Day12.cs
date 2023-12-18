@@ -79,7 +79,7 @@ public class Day12 : BaseDay, IDay
 
         long result = 0; 
         foreach (var c in ".#") {
-            if (dots[i] == c ||dots[i] == '?') 
+            if (dots[i] == c || dots[i] == '?') 
                 if (c == '.' && current == 0)
                     result += RecursiveCombinations(dots, groups, i+1, bi, 0,cache);
                 else if (c == '.' && current > 0 && bi < groups.Length && groups[bi] == current)
