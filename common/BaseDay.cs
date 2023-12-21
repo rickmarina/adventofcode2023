@@ -62,7 +62,7 @@ public abstract class BaseDay
         {
             for (int j = i + 1; j < n; j++)
             {
-                // Intercambiar elementos (i, j) y (j, i)
+                // change (i, j) with (j, i)
                 char temp = matrix[i][j];
                 matrix[i][j] = matrix[j][i];
                 matrix[j][i] = temp;
