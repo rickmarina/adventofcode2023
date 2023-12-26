@@ -21,6 +21,23 @@ public abstract class BaseDay
     }
 
     //TODO: Gauss Area Formula
+    public double GaussArea(List<Location<int>> v)
+    {
+        double suma = 0;
+
+        for (int i = 0; i < v.Count; i++)
+        {
+            double x1 = v[i].x;
+            double y1 = v[i].y;
+            double x2 = v[(i + 1) % v.Count].x;
+            double y2 = v[(i + 1) % v.Count].y;
+
+            suma += (x1 * y2) - (x2 * y1);
+        }
+
+        double area = Math.Abs(suma) / 2.0;
+        return area;
+    }
     //TODO: Pick's theorem
     #endregion
 
