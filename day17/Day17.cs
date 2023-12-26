@@ -3,6 +3,8 @@
 /// --- Day 17: Clumsy Crucible ---
 /// </summary>
 /// 
+
+#nullable disable
 public class QueueNode
 {
     public int heatLoss = 0;
