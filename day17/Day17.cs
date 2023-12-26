@@ -1,7 +1,4 @@
 
-using System.Diagnostics.Contracts;
-using System.Security.Cryptography.X509Certificates;
-
 /// <summary>
 /// --- Day 17: Clumsy Crucible ---
 /// </summary>
